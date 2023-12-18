@@ -30,8 +30,42 @@ class homeController extends Controller
         return view('pages.update');
     }
 
-    function  delete()
+    function  delete($id)
     {
+
+        DB::table('products')->where('id','=',$id)->delete();
         return redirect()->route('home');
     }
+
+    function sell()
+    {
+        return view('pages.sellProduct');
+    }
+
+    function store(Request $request)
+    {
+//      validate the form data
+        $request->validate([
+            'product_name' => 'required|string',
+            'product_price' => 'required|numeric',
+            'product_quantity' => 'required|integer',
+        ]);
+
+//        insert form data
+        DB::table('products')->insert(
+            [
+               'product_name'=> $request->input('product_name'),
+                'price'=> $request->input('product_price'),
+                'quantity'=> $request->input('product_quantity')
+            ]
+        );
+
+        return redirect()->route('home');
+    }
+
+    function updateProduct()
+    {
+
+    }
+
 }

@@ -62,13 +62,24 @@
 
 
                                 <a href="{{route('home.update')}}"> <button class="btn btn-sm btn-primary edit mx-1" name="update" >Update</button></a>
-                                 <a href="{{route('home.delete')}}"> <button class="btn btn-sm btn-danger mx-2" name="delete" type="submit">Delete Product</button> </a>
-                                    <button class="btn btn-sm btn-warning mx-2" name="sell" type="submit">Sell</button>
+                            </td>
+
+                                <form action="{{route('home.delete',['id' => $product->id])}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+
+
+                                    <td>
+                                  <button class="btn btn-sm btn-danger mx-2" name="delete" type="submit">Delete Product</button>
+                               </td>
+                                </form>
+                            <td>
+                                <a href="{{route('home.sell',['id' => $product->id])}}"> <button class="btn btn-sm btn-warning mx-2" name="sell" type="submit">Sell</button></a>
 {{--
- </form>--}}
+ </form>--}}                  </td>
 
 
-                                </td>
+
 
 
 
