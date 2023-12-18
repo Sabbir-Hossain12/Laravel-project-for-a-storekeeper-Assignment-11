@@ -7,9 +7,31 @@ use Illuminate\Support\Facades\DB;
 
 class homeController extends Controller
 {
-    function home()
+//    function home()
+//    {
+//        return view('layouts.app');
+//    }
+    public function display()
     {
-        return view('layouts.app');
+        $products=  DB::table('products')
+            ->get();
+
+        return view("pages.home")->with('products',$products);
+
+
+    }
+    function addProduct()
+    {
+        return view('pages.addProduct');
     }
 
+    function update()
+    {
+        return view('pages.update');
+    }
+
+    function  delete()
+    {
+        return redirect()->route('home');
+    }
 }
