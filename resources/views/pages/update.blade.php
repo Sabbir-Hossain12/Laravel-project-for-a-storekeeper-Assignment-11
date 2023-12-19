@@ -9,20 +9,22 @@
             <h3 class="text-center ">Update Product</h3>
             <h5 class="text-center p-3"></h5>
 
-            <form class="form" method="post" action="">
+            <form class="form" method="post" action="{{route('product.update',['id'=>$product->id])}}">
+                @csrf
+                @method('PUT')
                 <div class="form-outline mb-4">
 
 
                     <div class="form-outline mb-4">
-                        <input type="text" name="name" id="form3Example3cg" class="form-control form-control-lg" placeholder="Product Name " required />
+                        <input type="text" name="product_name" id="form3Example3cg" class="form-control form-control-lg" placeholder="Product Name " value="{{ $product->product_name }}" required />
 
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="text" name="price" id="form3Example3cg" class="form-control form-control-lg" placeholder="Price " required />
+                        <input type="text" name="product_price" id="form3Example3cg" class="form-control form-control-lg" placeholder="Price" value="{{ $product->price }}" required />
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="text" name="quantity" id="form3Example3cg" class="form-control form-control-lg" placeholder="Quantity" required />
+                        <input type="text" name="product_quantity" id="form3Example3cg" class="form-control form-control-lg" placeholder="Quantity" value="{{ $product->Quantity }}" required />
                     </div>
                 </div>
 

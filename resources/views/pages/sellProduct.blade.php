@@ -9,20 +9,22 @@
             <h3 class="text-center ">Sell Product</h3>
             <h5 class="text-center p-3"></h5>
 
-            <form class="form" method="post" action="">
+            <form class="form" method="post" action="{{route('product.sell',['id'=>$product->id])}}">
+
+
                 <div class="form-outline mb-4">
 
 
                     <div class="form-outline mb-4">
-                        <input type="text" name="name" id="form3Example3cg" class="form-control form-control-lg" placeholder="Product Name " required />
+                        <input type="text" name="product_name" id="form3Example3cg" class="form-control form-control-lg" placeholder="{{$product->product_name}}" value="{{$product->product_name}}"  />
 
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="text" name="price" id="form3Example3cg" class="form-control form-control-lg" placeholder="Price " required />
+                        <input type="text" name="product_price" id="form3Example3cg" class="form-control form-control-lg" placeholder="{{$product->price}}$" value="{{$product->price}}" />
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="text" name="quantity" id="form3Example3cg" class="form-control form-control-lg" placeholder="Quantity" required />
+                        <input type="number" name="product_quantity" id="form3Example3cg" class="form-control form-control-lg" max="{{$product->Quantity}}" min="1"  required />
                     </div>
                 </div>
 

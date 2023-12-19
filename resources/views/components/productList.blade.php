@@ -61,7 +61,7 @@
 
 
 
-                                <a href="{{route('home.update')}}"> <button class="btn btn-sm btn-primary edit mx-1" name="update" >Update</button></a>
+                                <a href="{{route('home.update',['id' => $product->id])}}"> <button class="btn btn-sm btn-primary edit mx-1" name="update" >Update</button></a>
                             </td>
 
                                 <form action="{{route('home.delete',['id' => $product->id])}}" method="post">
