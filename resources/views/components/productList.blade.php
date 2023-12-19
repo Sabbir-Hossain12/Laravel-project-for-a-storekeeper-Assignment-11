@@ -12,7 +12,11 @@
                             <!-- <a href="">All Students</a> -->
                             <!-- <span> | </span> -->
                              <a href="{{route('home.add')}} "><button class="btn btn-primary btn-sm">Add new Product</button></a>
+                            <a href="{{route('home.salesReport')}} "><button class="btn btn-primary btn-sm mx-3">Sales Report</button></a>
                         </div>
+
+
+
 
                         <!-- Display login and Logout button based on Session -->
                         <div>

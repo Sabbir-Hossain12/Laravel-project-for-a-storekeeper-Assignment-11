@@ -34,3 +34,6 @@ Route::post('/home/sell/{id}',[homeController::class,'sellProduct'])->name('prod
 
 //view Dashboard
 Route::get('/dashboard',[homeController::class,'viewDashboard'])->name('dashboard');
+
+// view salesReport page
+Route::get('/home/salesPage',[homeController::class,'salesReportPage'])->name('home.salesReport');

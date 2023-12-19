@@ -150,5 +150,10 @@ $lastMonth=DB::table('sold_products')
 }
 
 
-
+function salesReportPage()
+{
+    $products= DB::table('sold_products')
+        ->get();
+    return view('pages.salesReportPage')->with(['products'=>$products]);
+}
 }
