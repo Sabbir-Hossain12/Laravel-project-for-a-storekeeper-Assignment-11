@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('content')
+@section('contents')
 
 
-    <section class="container " id="custom-edit" style="margin-top:10rem; ">
+    <section class="container" id="custom-edit">
 
-        <div class=" p-5 rounded" style="background-color:bisque">
+        <div class=" p-5 rounded" style="background-color:rgb(78, 115, 223)">
             <h3 class="text-center ">Sell Product</h3>
             <h5 class="text-center p-3"></h5>
 

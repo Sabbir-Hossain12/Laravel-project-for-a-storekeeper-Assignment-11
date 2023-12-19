@@ -2,7 +2,7 @@
 <section>
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-8">
+            <div class="col-12">
                 <div class="table1">
 
                     <h2>Product List</h2>

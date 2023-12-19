@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('content')
-<section class="container " id="custom-edit" style="margin-top:10rem; ">
+@section('contents')
+<section class="container " id="custom-edit"  >
 
     <div class=" p-5 rounded" style="background-color:bisque">
         <h3 class="text-center ">Add new Product </h3>

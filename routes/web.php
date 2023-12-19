@@ -31,3 +31,6 @@ Route::put('/home/update/{id}',[homeController::class,'updateProduct'])->name('p
 Route::get('/home/sellProduct/{id?}',[homeController::class,'sell'])->name('home.sell');
 //sell product
 Route::post('/home/sell/{id}',[homeController::class,'sellProduct'])->name('product.sell');
+
+//view Dashboard
+Route::get('/dashboard',[homeController::class,'viewDashboard'])->name('dashboard');

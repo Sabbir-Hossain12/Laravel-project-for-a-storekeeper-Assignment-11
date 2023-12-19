@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('content')
+@section('contents')
 
     @include('components.productList')
 

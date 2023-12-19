@@ -120,6 +120,34 @@ class homeController extends Controller
     }
 
 
+function viewDashboard()
+{
+ $today=   DB::table('sold_products')
+        ->whereDate('created_at','=',today())
+        ->sum(DB::raw('price * Quantity '));
+
+$yesterday= DB::table('sold_products')
+    ->whereDate('created_at','=',today()->subDay())
+    ->sum(DB::raw('price * Quantity'));
+
+$thisMonth= DB::table('sold_products')
+    ->whereMonth('created_at','=',now()->month)
+    ->sum(DB::raw('price * Quantity'));
+
+$lastMonth=DB::table('sold_products')
+    ->whereMonth('created_at','=',now()->subMonth()->month)
+    ->sum(DB::raw('price * Quantity'));
+
+    return view('pages.dashboard',[
+
+        'today'=>$today,
+        'yesterday'=>$yesterday,
+        'thisMonth'=> $thisMonth,
+        'lastMonth'=>$lastMonth
+
+
+    ]);
+}
 
 
 
